@@ -3,6 +3,7 @@ package com.generation.lulugames.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,9 +29,10 @@ public class Categoria {
 	@Size(min = 5, max = 55, message = "O atributo deve conter no mínimo 5 e no máximo 55 caracteres!")
 	private String sessao;
 	
-	
-	@NotNull(message = "É obrigatório informar se o sessão do produto está na promoção!")
-	private Boolean promocao;
+    @Column(name= "nome" )
+	@NotNull(message = "É obrigatório que o produto tenha um nome!")
+	@Size(min = 5, max = 100, message = "O atributo deve conter no mínimo 5 e no máximo 100 caracteres!")
+	private String nome;
 	
 	@OneToMany (mappedBy = "categoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties ("categoria")
@@ -52,12 +54,12 @@ public class Categoria {
 		this.sessao = sessao;
 	}
 
-	public Boolean getPromocao() {
-		return promocao;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setPromocao(Boolean promocao) {
-		this.promocao = promocao;
+	public void setPromocao(String nome) {
+		this.nome = nome;
 	}
 	
 	public List<Produto> getProduto() {
