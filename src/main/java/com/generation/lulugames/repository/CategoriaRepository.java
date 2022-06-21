@@ -14,8 +14,5 @@ public interface CategoriaRepository  extends JpaRepository <Categoria, Long>{
 	public List <Categoria> findAllBySessaoContainingIgnoreCaseOrderBySessao
 	(@Param("sessao") String sessao);
 	
-	public List<Categoria> findAllByDescricaoContainingIgnoreCaseOrderByDescricao
-	(@Param("nome") Long descricao);
-	
 	
 }

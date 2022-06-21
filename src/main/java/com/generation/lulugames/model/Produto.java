@@ -17,13 +17,12 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public class Produto {
-
+@Entity
 	
-	@Entity
-	@Table( name = "tb_produtos")
-	public class Produtos {
-	       
+@Table( name = "tb_produtos")
+ 
+	public class Produto {
+		
 		@Id
 		@GeneratedValue(strategy = GenerationType. IDENTITY)
 		private Long id;
@@ -104,4 +103,3 @@ public class Produto {
 		
   }
 
-}	
